@@ -70,4 +70,8 @@
             Nos próximos capítulos, à medida que aprendemos os recursos da linguagem, veremos as diferenças entre os modos estrito e antigo. Falizmente, não há muito e eles realmente tornam nossas vidas melhores.
 
             Todos os exemplos neste tutorial assumem o modo estrito, a mesno que(muito raramente) seja especificado de outra forma.
+
+        Basicamente:
+
+            Quando habilitado , ele faz com que certas práticas de programação que anteriormente passavam despercebidas sejam identificadas e tratadas como erros.
  */
