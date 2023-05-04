@@ -1,0 +1,105 @@
+Tipos de dados
+
+    Um valor em JavaScript é sempre de um determinado tipo. Por exemplo, uma string ou um número.
+
+    Existem oito tipos básicos de dados em JavaScript. Aqui, vamos abordá-los de forma geral e nos próximos capítulos falaremos sobre cada um deles em detalhes.
+
+    Podemos colocar qualquer tipo em uma variável. Por exemplo, uma variável pode em um momento armazenar uma string e depois um número:
+
+        let message = "Hello world";
+
+        message = 123456;
+
+    Linguagens de programação que permitem tais coisas, como JavaScript, são chamadas de "digitadas dinamicamente", o que significa que existem tipos de dados, mas variáveis não estão vinculadas a nenhum deles.
+
+    Numero:
+
+        O tipo número representa números inteiros e de ponto flutuante:
+
+            let n = 123;
+
+            n = 12.3334;
+
+        Existem muitas operações para numeros, por exemplo, multiplicação "*", divisão "/", adição "+", subtração "-" e assim por diante.
+
+        Além dos números regulares, existem os chamados "valores númericos especiais" que também pertecem a este tipo de dados: "Infinity", "-Infinity" e "NaN".
+
+            Infinity:
+
+                Representa o "infinito"(1) matemático ∞. É um valor especial que é maior do que qualquer número.
+
+                (1) - https://en.wikipedia.org/wiki/Infinity
+
+                Podemos obtê-lo como resultado da divisão por zero:
+
+                    alert(1 / 0); // Infinity
+
+                Ou apenas referenciá-lo diretamente:
+
+                    alert(Infinity); // Infinity
+
+            NaN:
+
+                É pegajoso. Qualquer outra operação matemática envolvendo um "NaN" vai retornar "NaN":
+
+                    alert(NaN + 1); // NaN
+
+                    alert(3 * NaN); // NaN
+
+                    alert("olá" / 2 - 1); // NaN
+
+                Portanto, se houver um "NaN" em algum lugar em uma expressão matemática, ele se propaga para todo o resultado(só há um exceção: NaN ** 0 é 1)
+
+                NOTA:
+
+                    As operações matemáticas são seguras:
+
+                        Fazer matemática é "seguro" em JavaScript. Podemos fazer qualquer coisa: dividir por zero, tratar strings não numéricas como números, etc.
+
+                        O script nunca irá parar para com um erro fatal("morrer"). Na pior das hipóteses, obteremos um "NaN" como resultado.
+
+        Valores numéricos especiais formalmente pertencem ao tipo "numérico". Claro que não não números no sentido comum desta palavra.
+
+        Veremos mais sobre como trabalhar com números no capítulo "Numeros"(1).
+
+        (1) - https://javascript.info/number
+
+        BigInt:
+
+            Em JavaScript, tipo "número" não pode representar com segurança valores inteiro maiores que (2 ** 53 - 1 == 9007199254740991) ou -(2 ** 53 - 1 == -9007199254740991) para negativos.
+
+            Para ser realmente preciso, o tipo "número" pode armazenar números inteiros maiores (1.7976931348623157 * 10 ** 308), mas fora do intervalo seguro de inteiros(±(2 ** 53 - 1)) haverá um erro de precisão, porque nem todos os dígitos cabem no armazenamento fixo de 64bits. Portanto, um valor "aproximado" pode ser armazenado.
+
+            Por exemplo, esses dois números(logo acima da faixa segura) são os mesmos:
+
+                console.log(9007199254740991 + 1); // 9007199254740992
+                console.log(9007199254740991 + 2); // 9007199254740992
+
+            Por assim dizer, todos os inteiros ímpares maiores que (2 ** 53 - 1) não podem ser armazenados no tipo "número".
+
+            Para a maioria das finalidades, o alcance (2 ** 53 - 1) é suficiente, mas às vezes precisamos de todo o intervalo de números inteiros realmente grandes, por exemplo, para criptografia ou carimbos de data/hora com precisão de microsegundos.
+
+            o type "BigInt" foi adicionado recentemente ao idioma para representar números inteiros de comprimento arbritrários.
+
+            Um valor "BigInt" é criado anexando "n" ao final de um número inteiro:
+
+                // the "n" at the end means it's a BigInt
+                const bigInt = 1234567890123456789012345678901234567890n;
+
+            Como os números "BigInt" são raramente necessários, não os abordamos aqui, mas dedicamos a eles um capítulo separado "BigInt"(1). Leia-o quando precisar de números grandes.
+
+            (1) - https://javascript.info/bigint
+
+            NOTA:
+
+                Problema de compatibilidade:
+
+                    No entanto, "BigInt" é suportado no Firefox/Chrome/Edge/Safari, mas não no IE.
+
+                Você pode verificar a tabela de compatibilidade "MDN BigInt"(1) para saber quais versões de um navegador são suportadas.
+
+                (1) - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#browser_compatibility
+
+    String:
+
+        HERE...
