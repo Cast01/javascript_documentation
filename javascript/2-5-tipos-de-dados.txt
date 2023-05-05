@@ -102,4 +102,138 @@ Tipos de dados
 
     String:
 
-        HERE...
+        Uma "string" deve estar entre aspas:
+
+            let str1 = "Hello";
+
+            let str2 = 'Hello';
+
+            let str3 = `Hello`;
+
+        Em JavaScript, existem 3 tipos de aspas:
+
+            1 - Aspas duplas:
+
+                "Hello"
+
+            2 - Aspas simples:
+
+                'Hello'
+
+            3 -  Backticks:
+
+                `Hello`
+
+        As aspas duplas e simples são aspas "simples". Praticamente não há diferença entre elas em JavaScript.
+
+        Backticks são citações de "funcionalidade estendida". Eles nos permitem incorporar variáveis e expressões em uma string envolvendo-as em "${...}", por exemplo:
+
+            let name = "Jhon";
+
+            alert(`Hello, ${name}`); // Hello, Jhon
+
+            alert(`The result is ${2 + 1}`); // The result is 3
+
+        A expressão dentro de "${...}" é válida e o resultado torna-se parte da string. Podemos colocar qualquer coisa lá: uma variável como "name" ou uma expressão aritmética ou algo mais complexo.
+
+        Observe que isso só pode ser feito em backticks. Outras citações não têm essa funcionalidade de incorporação.
+
+            alert('The result is ${1 + 2}'); // The result is ${1 + 2}
+
+        Abordaremos as strings com mais detalhes no capítulo "String"(1).
+
+        (1) - https://javascript.info/string
+
+        NOTA:
+
+            Não há nenhum tipo para um único caractere:
+
+                Em algumas linguagens, existe um tipo expecccial de "caracter" para um único caractere. Por exemplo, na linguagem C e Java é chamado de "char".
+
+                Em JavaScript, não existe esse tipo. Só existe um tipo: "string". Uma string pode consistir em zero caracteres(estar vazio), um caractere ou muitos deles.
+
+    Boleano(tipo lógico):
+
+        O tipo boleano tem apenas dois valores: "true" e "false".
+
+        Esse tipo é comumente usado para armazenar valores sim/não:
+
+            true:
+
+                Significa "sim/correto"
+
+            false:
+
+                Significa "não/incorreto"
+
+        Por exemplo:
+
+            let checked = true;
+
+            let notChecked = false;
+
+        Valores boleanos também vêm como resultado de comparações:
+
+            let isGreater = 4 > 1; // true
+
+        Abordaremos os boleanos mais profundamente no capítulo "Operadores lógicos".
+
+    O valor "nulo"(null):
+
+        O valor especial "null" não pertence a nenhum dos tipos descritos acima.
+
+        Ele forma um tipo separado próprio que contém apenas o valor "null":
+
+            let age = null;
+
+        Em JavaScript, "null" não é uma "referência a um objeto inexistente" ou um "ponteiro nulo" como em algumas linguagens.
+
+        É apenas um valor especial que representa "nada", "vazio" ou "valor desconhecido".
+
+        O código acima afirma que "age" é desconhecido;
+
+    O valor "indefinido"(undefined):
+
+        O valor especial "undefined" também se destaca. Ele cria um tipo próprio, assim como "null".
+
+        O significado de 'undefine' é 'valor não atribuido'.
+
+        Se uma variável for declarada, mas não atribuída, seu valor será "undefined":
+
+            let age; // undefined
+
+        Tecnicamente, é possível atribuir explicitamente 'undefine' a uma variável:
+
+            let age = undefined;
+
+        Mas não é recomendado fazer isso. Normalmente, é usado "null" para atribuir um valor 'vazio' ou 'desconhecido' a uma variável, enquanto 'undefined' é reservado como um valor inicial padrão para coisas não atribuídas.
+
+    Objetos e Símbolos:
+
+        O tipo "object" é especial.
+
+        Todos os atributos são chamados de 'primitivos' porque seu valores podem contem apenas um única coisa(seja uma string, nnúmero ou qualquer outra coisa). Em contraste, os objetos são usados para armazenar coleções de dados e entidades mais complexas.
+
+        Por serem tão importantes, os objetos merecem um tratamento especial. Trataremos deles mais adiante no capítulo 'Objetos', depois de aprendermos mais sobre primitivas.
+
+        O tipo 'symbol' é usado para criar identificadores exclusivos para objetos. Temos que mencioná-lo aqui por  uma questão de completude, mas também adiar os detalhes até que conheçamos os objetos.
+
+    O operador "typeof":
+
+        O operador "typeof" retorna o tipo do operando. É útil quando queremos processar valores de diferentes tipos de forma diferente ou apenas queremos fazer um verificação rápida.
+
+        Uma chamada para "typeof" retorna uma string com o nome do tipo:
+
+            typeof undefined; // 'undefined'
+
+            typeof 0; // 'number'
+
+            typeof 1n; // 'bigint'
+
+            typeof true; // 'boolean'
+
+            typeof null; // 'object'
+
+            typeof Math; // 'object'
+
+            typeof alert; // 'function'
