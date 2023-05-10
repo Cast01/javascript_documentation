@@ -22,7 +22,7 @@ Tipos de dados
 
         Existem muitas operações para numeros, por exemplo, multiplicação "*", divisão "/", adição "+", subtração "-" e assim por diante.
 
-        Além dos números regulares, existem os chamados "valores númericos especiais" que também pertecem a este tipo de dados: "Infinity", "-Infinity" e "NaN".
+        Além dos números regulares, existem os chamados "valores númericos especiais" que também pertecem a estes tipos de dados: "Infinity", "-Infinity" e "NaN".
 
             Infinity:
 
@@ -148,7 +148,7 @@ Tipos de dados
 
             Não há nenhum tipo para um único caractere:
 
-                Em algumas linguagens, existe um tipo expecccial de "caracter" para um único caractere. Por exemplo, na linguagem C e Java é chamado de "char".
+                Em algumas linguagens, existe um tipo expecial de "caracter" para um único caractere. Por exemplo, na linguagem C e Java é chamado de "char".
 
                 Em JavaScript, não existe esse tipo. Só existe um tipo: "string". Uma string pode consistir em zero caracteres(estar vazio), um caractere ou muitos deles.
 
@@ -212,7 +212,7 @@ Tipos de dados
 
         O tipo "object" é especial.
 
-        Todos os atributos são chamados de 'primitivos' porque seu valores podem contem apenas um única coisa(seja uma string, nnúmero ou qualquer outra coisa). Em contraste, os objetos são usados para armazenar coleções de dados e entidades mais complexas.
+        Todos os atributos são chamados de 'primitivos' porque seu valores podem contem apenas um única coisa(seja uma string, número ou qualquer outra coisa). Em contraste, os objetos são usados para armazenar coleções de dados e entidades mais complexas.
 
         Por serem tão importantes, os objetos merecem um tratamento especial. Trataremos deles mais adiante no capítulo 'Objetos', depois de aprendermos mais sobre primitivas.
 
@@ -232,8 +232,96 @@ Tipos de dados
 
             typeof true; // 'boolean'
 
-            typeof null; // 'object'
-
             typeof Math; // 'object'
 
+            typeof null; // 'object'
+
             typeof alert; // 'function'
+
+        As útimas três linhas podem precisar de explicação adicional:
+
+            Math:
+
+                É um objeto global integrado que fornece operações matemáticas. Aprenderemos no capítulo 'Numeros'. Aqui, serve apenas como um exemplo de um objeto.
+
+            Null:
+
+                Esse é um erro oficialmente reconhecido no 'typeof', vindo dos primeiros dias do javascript e mantido para compatibilidade. Definitivamente, 'null' não é um objeto. É um valor especial com um tipo separado próprio. O comportamento de typeof está errado aqui.
+
+            alert:
+
+                É uma função. Por que 'alert' é uma função. Estudaremos as funções nos próximos capítulos onde também veremos que não existe um tipo de 'função' em JavaScript. As funções pertencem ao tipo de objetos. Mas 'typeof' os trata de maneira diferente, retornando 'function'. Isso também vem dos primeiros dias do JavaScript. Tecnicamente, tal comportamento não é correto, mas pode ser conveniente na prática.
+
+        NOTA:
+
+            A sintaxe 'typeof(x)':
+
+                Você também pode encontrar outra sintaxe: 'typeof(x)' é o mesmo que 'typeof x'.
+
+                Para deixar claro:
+
+                    'typeof' é um operador, não uma função. Os parênteses aqui não fazem parte de 'typeof'. É o tipo de parênteses usado para agrupamento matemático.
+
+                Normalmente, esses parênteses contêm uma expressão matemática, como (2 + 2), mas aqui eles contêm apenas um argumento '(x)'. Sintaticamente, eles permitem evitar um espaço entre 'typeof' e seu argumento, e algumas pessoas gostam disso.
+
+                Algumas pessoas preferem 'typeof(x)', embora a 'typeof x' também seja muito mais comum.
+
+RESUMO:
+
+    Existem oito tipos de dados em JavaScript:
+
+        Sete tipos de dados primitivos:
+
+            Number:
+
+                Para números de qualquer tipo:
+
+                    Inteiro e Ponto flutuante, inteiros são limitados por +-(2**53-1);
+
+            Bigint:
+
+                Para números inteiros de comprimento arbitrário.
+
+            String:
+
+                Letra(s) ou palavra(s). Uma string pode ter zero ou mais caracteres, não há nenhum tipo separado para um único caractere.
+
+            Boolean:
+
+                true/false.
+
+            Null:
+
+                Para valores desconhecidos - um tipo autônomo que possui um único valor 'null'.
+
+            Undefined:
+
+                Para valores não atribuídos - um tipo independente que possui um único valor 'undefined'.
+
+            Symbol:
+
+                Para identificadores exclusivos.
+
+            Object:
+
+                Para estruturas de dados mais complexas.
+
+    O 'typeof' nos premite ver qual tipo está armazenado em uma variável.
+
+        Geralmente usado como 'typeof(x)' ou 'typeof x'.
+
+        Retorna uma string com o nome do tipo.
+
+        Para 'null' retorna 'object' - isso é um erro de linguagem, não é realmente um objeto.
+
+TAREFAS:
+
+    Qual é a saída do script:
+
+        let name = 'Gabriel';
+
+        alert( `hello ${1}` ); // hello 1
+
+        alert( `hello ${"name"}` ); // hello name
+
+        alert( `hello ${name}` ); // hello Gabriel
