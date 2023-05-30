@@ -1,0 +1,101 @@
+https://javascript.info/alert-prompt-confirm
+
+Interação: Alert, Prompt & Confirm:
+
+    Como usaremos o navegador como nosso ambiente de demonstração, vamos ver algumas funções para interagir com o usuário: alert, prompt e confirm.
+
+        Alert:
+
+            Este já vimos. Ele mostra uma mensagem e espera que o usuário pressione 'OK'.
+
+            EXEMPLO:
+
+                alert(message)
+
+                alert('Hello')
+
+                https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert
+
+            A pequena janela que é mostrada com a mensagem é chamda de modal. A palavra 'modal' significa que o usuário não pode interagir com o resto da página, pressionar outros botões, etc, até que tenha lidado com o 'modal'; nesse caso até que tenha pressionado 'OK'.
+
+        Prompt:
+
+            EXEMPLO:
+
+                let result = prompt(title, [default])
+
+                let result = prompt('your name is:', 'put tour name here')
+
+                Exibirá um modal com uma mensagem(string) ao usuário, um campo de entrada e um botão 'OK' e 'Cancel'
+
+                https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_prompt
+
+            A função 'prompt' aceita dois argumentos:
+
+                1 - title:
+
+                    O texto que será exibido ao usuário.
+
+                2 - default:
+
+                    Opcional. O valor inicial para o campo de entrada.
+
+            NOTA:
+
+                Os colchetes em volta de default([default]) significa que o parametro é opcional e não obrigatório.
+
+            O usuário pode digitar algo no campo de entrada e pressionar 'OK'. A função retorna o que está no campo de entrada se pressionado 'OK' ou 'null'(independente se o segundo parametro esta sendo passado) se pressionado 'Cancel' ou a tecla 'esc'.
+
+            AVISO:
+
+                No IE sempre forneça o segundo parametro.
+
+                    O segundo parametro é opcional, mas se não o fornecermos para o IE o texto no campo de entrada padrão será 'undefined':
+
+                        prompt('test')
+
+                        Dentro do campo de entrada estará escrito 'undefined'.
+
+                    Para deixarmos o campo de entrada vasio no IE basta passarmos string vasia('') para o segundo parametro:
+
+                        prompt('test', '')
+
+                        Dentro do campo de entrada não terá nada escrito.
+
+        Confirm:
+
+            A função confirm mostra um modal com a questão e dois botões: 'OK' e 'Cancel'.
+
+            let result = confirm(question);
+
+            A função retorna 'true' para 'OK' e 'false' para 'Cancel'.
+
+            Exemplo:
+
+                let isBoss = confirm('Are you the boss?')
+
+    Resumo:
+
+        alert:
+
+            Mostra uma mensagem.
+
+        prompt:
+
+            Mostra uma mensagem e um campo de entrada para que o usuário escreva algo e retorna o que está no campo de entrada se pressionado 'OK' ou 'null' se pressionado 'Cancel'.
+
+        confirm:
+
+            Mostra uma mensagem e espera o usuário pressionar 'OK' ou 'Cancel' e retorna 'true'/OK ou 'false'/Cancel
+
+        Todas essas funções são um modal:
+
+            Elas para a execução do script e não permitem que o usuário interaja com a página até o modal ser fechado.
+
+        Tem duas limitações compartilhadas pelas funções acima:
+
+            O local onde o modal é mostrado é determinado pelo navegador. Sempre no centro da parte superior.
+
+            A aparencia do modal é definida dependendo do navegador. Não pode ser modificada.
+
+        Existem outras maneiras de exibir um modal mais bonito e uma interação mais rica com o visitante.
